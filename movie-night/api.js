@@ -1,0 +1,31 @@
+//api config
+const API_KEY = "API_KEY_HERE";
+const BASE_URL = "https://api.themoviedb.org/3";
+
+
+//fetches list of pupular movies
+export async function getPopularMovies() {
+  const response = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}`);
+  const data = await response.json();
+  return data.results;
+}
+
+
+//fetches info for each movie
+export async function getMovieDetails(id) {
+  const response = await fetch(
+    `${BASE_URL}/movie/${id}?api_key=${API_KEY}&append_to_response=credits`,
+  );
+  const data = await response.json();
+  return data;
+}
+
+
+//search movies based on user query
+export async function searchMovies(query) {
+    const response = await fetch(
+        `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`
+    );
+    const data = await response.json();
+    return data.results;
+}
