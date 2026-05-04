@@ -59,5 +59,3 @@ This project uses the TMDB API.
 1. Create your account at https://developer.themoviedb.org/
 2. Generate an API key
 3. Add your API key in `api.js`:
-
-## 📁 Project Structure
